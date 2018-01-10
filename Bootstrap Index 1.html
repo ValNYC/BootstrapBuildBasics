@@ -5,7 +5,7 @@
 	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 	<meta content='ie=edge' http-equiv="x-ua-compatible">
 	<title>Bootstrap Index1</title>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 	<style>
 	             body,html {height: 100%;  width: 100%;}    
 	                   
@@ -13,10 +13,12 @@
 	                       background-color: black;
 	                   }
 	                
-	                   .htop div{
+	                   .htop div, #about .container, #contact .container{
+	                   	/*when these background colors were applied per div (#about div, #contact div etc) the grey came out double. Instead of applying everything to whole div, only apply it to the .container*/
 	                       background-color: rgb(0,0,0) transparent;
 	                       background-color: rgba(0,0,0,0.6);
 	                       padding: 10px;
+	                       color: white;
 	                   }
 
 	                  .htop {
@@ -25,13 +27,25 @@
 	                       width: 100%;
 	                       text-align: center;
 	                       min-height: auto;
-	                       background-image: url(https://cdn.stocksnap.io/img-thumbs/280h/IZSZDWBG97.jpg); /*SAVE THIS IMAGE FOR LATER*/
-	                       /*background-image: url(http://via.placeholder.com/1600x700);*/
+	                       background-image: url(https://picsum.photos/1600/700); /*SAVE THIS IMAGE FOR LATER*/
+	                       /*background-image: url(https://placeimg.com/1600/700/any);*/
 	                       background-size: cover; /*this helps the image to auto resize/center when screen dimensions change*/
 	                       color: white;
 	                       font-size: 1em;
 	                       padding: 3em;
 	                   }
+
+
+	                    #about {
+	                       background-image: url(https://placeimg.com/1600/700/any);
+	                       /*background-image: url(https://placeimg.com/1600/700/any);*/
+	                       background-size: cover; 
+	                       }
+
+	                       #contact {
+	                       background-image: url(https://picsum.photos/1600/700/?random);
+	                       background-size: cover; 
+	                       }
 	               .footerA{
 	                   height: 200px;
 	                   padding: 20px;
@@ -76,7 +90,7 @@
 			<h1>My Company</h1>
 			<hr>
 			<p>I'm ready to tell you about all the cool Rockin' Bambina Bear products!.</p>
-			<p>My Bambina gang wants you to join all of the fun and make noise!</p><button class="btn btn-primary btn-lg" type="button">Best Deals Today</button>
+			<p>My Bambina gang wants you to join all of the fun and make noise!</p><button class="btn btn-primary btn-lg" data-toggle='modal' data-target='#modal1' type="button">Best Deals Today</button> <!--up here we need to define that THIS^^ button is the TARGET for the MODAL button created at bottom of script-->
 		</div>
 	</header>
 	<section class='msection' id='about'>
@@ -96,7 +110,7 @@
 				</div>
 				<div class="col-md-3 text-xs-center">
 					<h3>One</h3>
-					<p>Vokalia and Consonantia, there live the blind texts.</p>
+					<p>Vokalia and Consonantia, there are  texts.</p>
 				</div>
 				<div class="col-md-3 text-xs-center">
 					<h3>One</h3>
@@ -244,11 +258,30 @@
 	<footer class="text-xs-center footerA">
 		(c) copyright info Grr Grr
 	</footer>
+
+
+
+<!--adding a MODAL (for a pop-up window) at the end of very last section because you want all style/content code to load first!-->
+<div id="modal1" class="modal" role='dialog'>
+	<div class="modal-dialog" role='document'>
+		<div class="modal-content">
+		<div class="modal-header">Best Deal offer EVER</div>
+		<div class="modal-body">Don't miss out! Buy now and save</div>
+		<div class="modal-footer">
+			<!--here we create a CLOSE button with type DISMISS MODAL so that it understands to close all previous modals -->
+			<button type="button" class="btn btn-primary" data-dismiss='modal'>CLOSE</button>
+		 </div>
+	 </div>
+		
+       </div>
+</div>
+
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
 	</script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
 	</script> 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js">
 	</script>
 </body>
 </html>
